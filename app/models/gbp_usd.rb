@@ -1,0 +1,2 @@
+class GbpUsd < ApplicationRecord
+end

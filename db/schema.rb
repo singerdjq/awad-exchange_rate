@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_220256) do
+ActiveRecord::Schema.define(version: 2019_03_08_165501) do
+
+  create_table "gbp_usds", force: :cascade do |t|
+    t.string "date"
+    t.decimal "spot_exchange_rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

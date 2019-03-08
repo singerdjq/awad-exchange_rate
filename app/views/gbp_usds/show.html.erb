@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gbp_usd.date %>
+</p>
+
+<p>
+  <strong>Spot exchange rate:</strong>
+  <%= @gbp_usd.spot_exchange_rate %>
+</p>
+
+<%= link_to 'Edit', edit_gbp_usd_path(@gbp_usd) %> |
+<%= link_to 'Back', gbp_usds_path %>

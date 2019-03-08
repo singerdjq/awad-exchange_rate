@@ -1,0 +1,27 @@
+<%= form_with(model: gbp_usd, local: true) do |form| %>
+  <% if gbp_usd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gbp_usd.errors.count, "error") %> prohibited this gbp_usd from being saved:</h2>
+
+      <ul>
+      <% gbp_usd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spot_exchange_rate %>
+    <%= form.text_field :spot_exchange_rate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
