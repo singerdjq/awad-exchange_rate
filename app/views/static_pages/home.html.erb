@@ -1,5 +1,74 @@
+<html>
+    <head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script type="text/javascript">
+
+        $.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json', function (data) {
+
+    // Create the chart
+    Highcharts.stockChart('container', {
+
+
+        rangeSelector: {
+            selected: 0
+        },
+
+        title: {
+            text: 'USD to EUR exchange rate'
+        },
+
+        tooltip: {
+            style: {
+                width: '200px'
+            },
+            valueDecimals: 4,
+            shared: true
+        },
+
+        yAxis: {
+            title: {
+                text: 'Exchange rate'
+            }
+        },
+
+        series: [{
+            name: 'USD to EUR',
+            data: data,
+            id: 'dataseries'
+
+        // the event marker flags
+        }, {
+            type: 'flags',
+            data: [{
+                x: Date.UTC(2017, 11, 1),
+                title: 'A',
+                text: 'Some event with a description'
+            }, {
+                x: Date.UTC(2017, 11, 12),
+                title: 'B',
+                text: 'Some event with a description'
+            }, {
+                x: Date.UTC(2017, 11, 22),
+                title: 'C',
+                text: 'Some event with a description'
+            }],
+            onSeries: 'dataseries',
+            shape: 'circlepin',
+            width: 16
+        }]
+    });
+});
+        </script>
+    </head>
+<body>
+    <div id="container" style="height: 400px; min-width: 310px"></div>
+</body>
+</html>
+
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1>Welcome to the Exchange World</h1>
 
   <h2>
     This is the home page for the
@@ -12,5 +81,6 @@
 
 <%= link_to image_tag("rails.png", alt: "Rails logo"),
             'http://rubyonrails.org/' %>
-<%= link_to image_tag("kitten.jpg")%>
-            
+<%= link_to image_tag("Currency.jpg")%>
+
+      
